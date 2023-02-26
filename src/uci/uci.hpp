@@ -3,7 +3,7 @@
 
 #include <iostream>
 /**
- * Namespace containing the implementation of the Universal Chess Interface
+ * Namespace containing the implementation of the Universal Chess Interface.
  */
 namespace uci
 {

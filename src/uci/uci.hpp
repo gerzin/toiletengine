@@ -10,9 +10,19 @@ namespace uci
     /**
      * Start the UCI protocol.
      *
-     * @param in input stream.
-     * @param out output stream.
+     * @param[in] in input stream.
+     * @param[out] out output stream (default std::cout).
      */
     void start(std::istream &in, std::ostream &out = std::cout);
+
+    class EngineOptions
+    {
+    public:
+        EngineOptions();
+        ~EngineOptions() = default;
+
+    private:
+    };
+
 }
 #endif

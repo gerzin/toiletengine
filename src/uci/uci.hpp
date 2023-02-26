@@ -2,7 +2,9 @@
 #define TOILETENGINE_UCI_HPP
 
 #include <iostream>
-
+/**
+ * Namespace containing the implementation of the Universal Chess Interface
+ */
 namespace uci
 {
     /**

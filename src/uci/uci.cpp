@@ -1,5 +1,7 @@
 #include "uci.hpp"
 #include <string>
+#include <boost/tokenizer.hpp>
+#include <boost/algorithm/string.hpp>
 
 namespace
 {
@@ -18,23 +20,32 @@ namespace
 
 void uci::start(std::istream &in, std::ostream &out)
 {
-    bool done = false;
-    std::string read_cmd;
+    boost::char_separator<char> sep(" ", "\t");
+    using Tokenizer = boost::tokenizer<decltype(sep)>;
 
+    std::string read_cmd;
+    bool done = false;
     while (!done)
     {
         if (getline(in, read_cmd))
         {
-            if (read_cmd == "uci")
+            boost::trim(read_cmd);
+            Tokenizer tok(read_cmd, sep);
+            for (const auto &token : tok)
             {
-                id_reply(out);
-                options_reply(out);
-                uciok_reply(out);
-            }
+                if (token == "uci")
+                {
+                    id_reply(out);
+                    options_reply(out);
+                    uciok_reply(out);
+                    break;
+                }
 
-            else if (read_cmd == "quit")
-            {
-                done = true;
+                else if (read_cmd == "quit")
+                {
+                    done = true;
+                    break;
+                }
             }
         }
     }

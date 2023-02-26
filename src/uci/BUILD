@@ -5,6 +5,10 @@ cc_library(
     srcs = ["uci.cpp"],
     hdrs = ["uci.hpp"],
     visibility = ["//main:__pkg__"],
+    deps = [
+        "@boost//:algorithm",
+        "@boost//:tokenizer",
+    ],
 )
 
 cc_test(

@@ -1,5 +1,7 @@
 #include "uci.hpp"
 #include <string>
+#include <boost/tokenizer.hpp>
+#include <boost/algorithm/string.hpp>
 
 namespace
 {

@@ -1,5 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+# Google test
 http_archive(
     name = "com_google_googletest",
     strip_prefix = "googletest-7a7231c442484be389fdf01594310349ca0e42a8",

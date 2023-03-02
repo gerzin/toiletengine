@@ -3,12 +3,12 @@
 
 #include <iostream>
 /**
- * Namespace containing the implementation of the Universal Chess Interface.
+ * @brief Namespace containing the implementation of the Universal Chess Interface.
  */
 namespace uci
 {
     /**
-     * Start the UCI protocol.
+     * @brief Start the UCI protocol.
      *
      * @param[in] in input stream.
      * @param[out] out output stream (default std::cout).

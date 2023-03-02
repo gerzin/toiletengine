@@ -79,6 +79,43 @@ void uci::start(std::istream &in, std::ostream &out)
                     help_reply(out);
                     break;
                 }
+                else if (*token == "setoption")
+                {
+                    if (++token != tok.end() && *token == "name")
+                    {
+                        if (++token != tok.end())
+                        {
+                            std::string name = *token;
+                            if (++token != tok.end() && *token == "value")
+                            {
+
+                                if (++token != tok.end())
+                                {
+                                    std::string value;
+                                    value = *token;
+                                    out << "NAME: " << name << " VALUE: " << value << std::endl;
+                                    break;
+                                }
+                                else
+                                    break;
+                            }
+                            out << "NAME: " << name << std::endl;
+                            break;
+                        }
+                        else
+                            break;
+                    }
+                    else
+                    {
+                        out << "Unknown command: " << read_cmd << std::endl;
+                        break;
+                    }
+                }
+                else
+                {
+                    out << "Unknown command: " << read_cmd << std::endl;
+                    break;
+                }
             }
         }
     }

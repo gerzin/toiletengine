@@ -46,7 +46,7 @@ void uci::start(std::istream &in, std::ostream &out)
                     break;
                 }
 
-                else if (*token == "quit")
+                else if (*token == "quit" || *token == "exit")
                 {
                     done = true;
                     break;
@@ -119,4 +119,9 @@ void uci::start(std::istream &in, std::ostream &out)
             }
         }
     }
+}
+
+std::ostream &operator<<(std::ostream &out, const uci::EngineOptions &e)
+{
+    return out;
 }

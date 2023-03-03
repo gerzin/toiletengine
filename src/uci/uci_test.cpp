@@ -27,7 +27,6 @@ TEST(UciTest, UciCommand)
 
 TEST(UciTest, UciCommandWithSpaces)
 {
-
     istringstream uci_command(" \tuci      \n  quit   \n");
     ostringstream uci_output;
     uci::start(uci_command, uci_output);

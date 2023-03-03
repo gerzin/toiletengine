@@ -61,3 +61,5 @@ bazel-*
 .bazelversion
 # User-specific .bazelrc
 user.bazelrc
+# Doxygen generated documentation
+doc
